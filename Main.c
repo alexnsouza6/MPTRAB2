@@ -5,7 +5,7 @@
 #include "Romano.h"
 
 int main(int argc, char **argv) {
-	int i;
+	int i,j; 
 	char c[30];
 
 	printf("Digite o numero em romano: \n");
@@ -14,7 +14,8 @@ int main(int argc, char **argv) {
 	for(i=0;i<strlen(c);i++) c[i]=toupper(c[i]);
 	
 	c[strlen(c)] = '\0';
-	i=transforma_romano(c);
+	j=transforma_romano(c);
+	printf("O numero romano e equivalente a: %d\n", j);
 
 	return 0;
 

@@ -1,1 +1,1 @@
-int transforma_romano(char* c);
+int transforma_romano(const char* c);
