@@ -45,6 +45,25 @@ TEST(TestaROMANO, Hundreds){
 	EXPECT_EQ (390, transforma_romano("CCCXC"));
 }
 
+TEST(TestaROMANO, Hundreds2){
+	EXPECT_EQ (400, transforma_romano("CD"));
+	EXPECT_EQ (500, transforma_romano("D"));
+	EXPECT_EQ (572, transforma_romano("DLXXII"));
+	EXPECT_EQ (669, transforma_romano("DCLXIX"));
+	EXPECT_EQ (882, transforma_romano("DCCCLXXXII"));
+	EXPECT_EQ (899, transforma_romano("DCCCXCIX"));
+}
+
+TEST(TestaROMANO, Thousands){
+	EXPECT_EQ (900, transforma_romano("CM"));
+	EXPECT_EQ (1032, transforma_romano("MXXXII"));
+	EXPECT_EQ (1500, transforma_romano("MD"));
+	EXPECT_EQ (1869, transforma_romano("MDCCCLXIX"));
+	EXPECT_EQ (2049, transforma_romano("MMXLIX"));
+	EXPECT_EQ (2204, transforma_romano("MMCCIV"));
+}
+
+
 
 
 int main(int argc, char **argv) {

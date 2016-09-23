@@ -12,6 +12,9 @@ int transforma_romano(const char* num_romano){
 	if(num_romano[0]=='X') flag=3;
 	if(num_romano[0]=='L') flag=4;
 	if(num_romano[0]=='C') flag=5;
+	if(num_romano[0]=='D') flag=6;
+	if(num_romano[0]=='M') flag=7;
+	
 
 
 	while(num_romano[i]){
@@ -51,10 +54,29 @@ int transforma_romano(const char* num_romano){
 			if(num_romano[i+1]=='I') flag=0;
 			if(num_romano[i+1]=='V') flag=2;
 			if(num_romano[i+1]=='L') flag=4;
+			if(num_romano[i+1]=='D') flag=5;
+			if(num_romano[i+1]=='M') flag=6;
+		}
 
+		if(num_romano[i]=='D'){
+			if(flag==6) decimal+=500;
+			else if(flag==5) decimal+=300;
+			if(num_romano[i+1]=='X') flag=3;
+			if(num_romano[i+1]=='I') flag=0;
+			if(num_romano[i+1]=='V') flag=2;
+			if(num_romano[i+1]=='L') flag=4;
+			if(num_romano[i+1]=='C') flag=5;
+		}
 
-
-
+		if(num_romano[i]=='M'){
+			if(flag==7) decimal+=1000;
+			else if(flag==6) decimal+=800;
+			if(num_romano[i+1]=='X') flag=3;
+			if(num_romano[i+1]=='I') flag=0;
+			if(num_romano[i+1]=='V') flag=2;
+			if(num_romano[i+1]=='L') flag=4;
+			if(num_romano[i+1]=='C') flag=5;
+			if(num_romano[i+1]=='D') flag=6;
 		}
 
 		i++;
