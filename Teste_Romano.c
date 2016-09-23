@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "Romano.h"
 
-TEST(TestaROMANO, Unit){
+TEST(TestaROMANO, Units){
 	EXPECT_EQ (1, transforma_romano("I"));
 	EXPECT_EQ (2, transforma_romano("II"));
 	EXPECT_EQ (3, transforma_romano("III"));
@@ -62,6 +62,22 @@ TEST(TestaROMANO, Thousands){
 	EXPECT_EQ (2049, transforma_romano("MMXLIX"));
 	EXPECT_EQ (2204, transforma_romano("MMCCIV"));
 }
+
+TEST(TestaROMANO, Invalid_Operands){
+	EXPECT_EQ (-1, transforma_romano("IIII"));
+	EXPECT_EQ (-1, transforma_romano("VX"));
+	EXPECT_EQ (-1, transforma_romano("VL"));
+	EXPECT_EQ (-1, transforma_romano("VC"));
+	EXPECT_EQ (-1, transforma_romano("VVVV"));
+	EXPECT_EQ (-1, transforma_romano("XD"));
+	EXPECT_EQ (-1, transforma_romano("XXXX"));
+	EXPECT_EQ (-1, transforma_romano("LD"));
+	EXPECT_EQ (-1, transforma_romano("LL"));
+	EXPECT_EQ (-1, transforma_romano("DM"));
+	EXPECT_EQ (-1, transforma_romano("CCCC"));
+	EXPECT_EQ (-1, transforma_romano("MMMM"));	
+}
+
 
 
 

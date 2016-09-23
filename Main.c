@@ -15,7 +15,8 @@ int main(int argc, char **argv) {
 	
 	c[strlen(c)] = '\0';
 	j=transforma_romano(c);
-	printf("O numero romano e equivalente a: %d\n", j);
+	if(j==-1) printf("Numero invalido.\n %d \n", j);
+	else printf("O numero romano e equivalente a: %d\n", j);
 
 	return 0;
 
