@@ -7,7 +7,12 @@ int transforma_romano(const char* num_romano){
 	int decimal=0, i=0;
 	int flag;
 	int checador;
+	char c[30];
+	strcpy(c,num_romano);
+	
+	checador=valida_num_romano(c);
 
+	if(checador==0){
 	if(num_romano[0]=='I') flag=0;
 	if(num_romano[0]=='V') flag=2;
 	if(num_romano[0]=='X') flag=3;
@@ -15,11 +20,6 @@ int transforma_romano(const char* num_romano){
 	if(num_romano[0]=='C') flag=5;
 	if(num_romano[0]=='D') flag=6;
 	if(num_romano[0]=='M') flag=7;
-	
-	checador=valida_num_romano(num_romano);
-	if(checador==-1) return -1;
-
-	else{
 	while(num_romano[i]){
 		if(num_romano[i]=='I'){ 
 			if(flag==0) decimal++; //Se nao preceder nenhuma letra
@@ -86,10 +86,11 @@ int transforma_romano(const char* num_romano){
 	}
 	return decimal;
 	}
+	else return -1;
 }
 
 int valida_num_romano(const char* num_romano){
-	int i;
+	int i=0;
 	int contador=0;
 	int contadorc=0;
 	int contadorm=0;

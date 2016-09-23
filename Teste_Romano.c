@@ -64,7 +64,7 @@ TEST(TestaROMANO, Thousands){
 }
 
 TEST(TestaROMANO, Invalid_Operands){
-	EXPECT_EQ (-1, transforma_romano("IIII"));
+	ASSERT_EQ (-1, transforma_romano("IIII"));
 	EXPECT_EQ (-1, transforma_romano("VX"));
 	EXPECT_EQ (-1, transforma_romano("VL"));
 	EXPECT_EQ (-1, transforma_romano("VC"));
