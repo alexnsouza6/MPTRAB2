@@ -28,11 +28,33 @@ int transforma_romano(const char* num_romano){
 		}
 
 		if(num_romano[i]=='X'){
-			if(flag==2) decimal+=8;
-			else if(flag==3) decimal+=10;
+			if(flag==3) decimal+=10;
+			else if(flag==2) decimal+=8;
 			if(num_romano[i+1]=='I') flag=0;
 			if(num_romano[i+1]=='L') flag=3;
 			if(num_romano[i+1]=='V') flag=2;
+			if(num_romano[i+1]=='C') flag=4;
+		}
+
+		if(num_romano[i]=='L'){
+			if(flag==4) decimal+=50;
+			else if(flag==3) decimal+=30;
+			if(num_romano[i+1]=='X') flag=3;
+			if(num_romano[i+1]=='I') flag=0;
+			if(num_romano[i+1]=='V') flag=2;
+		}
+
+		if(num_romano[i]=='C'){
+			if(flag==5) decimal+=100;
+			else if(flag==4) decimal+=80;
+			if(num_romano[i+1]=='X') flag=3;
+			if(num_romano[i+1]=='I') flag=0;
+			if(num_romano[i+1]=='V') flag=2;
+			if(num_romano[i+1]=='L') flag=4;
+
+
+
+
 		}
 
 		i++;
